@@ -15,6 +15,8 @@ public class Dog extends Canine {
 
     public static void main(String[] args) {
         Dog spot = new Dog("Spot", 9.6);
-        spot.bark();
+        // spot.bark();
     }
+    //have to have abstract methods, allows generic methods
+    public void groom() {}
 }
