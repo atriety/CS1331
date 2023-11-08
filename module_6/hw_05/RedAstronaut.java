@@ -20,15 +20,23 @@ public class RedAstronaut extends Player implements Impostor {
     @Override
     public void emergencyMeeting(Player[] players) {
         if(!this.isFrozen()){
+            boolean isFrozenCheck1 = true;
             Arrays.sort(players);
-            int susInt = players.length - 1;
-            if (this.equals(players[susInt])) {
-                if (players[susInt - 1].getSusLevel() != players[susInt - 2].getSusLevel()) {
-                    players[susInt - 1].setFrozen(true);
+            int susIndex = players.length - 1;
+
+            while(isFrozenCheck1) {
+                if (players[susIndex].isFrozen()) {
+                    susIndex--;
+                }
+                isFrozenCheck1 = false;
+            }
+            if (this.equals(players[susIndex])) {
+                if (players[susIndex - 1].getSusLevel() != players[susIndex - 2].getSusLevel()) {
+                    players[susIndex - 1].setFrozen(true);
                 } 
             } else {
-                if (players[susInt].getSusLevel() != players[susInt - 1].getSusLevel()) {
-                    players[susInt].setFrozen(true);
+                if (players[susIndex].getSusLevel() != players[susIndex - 1].getSusLevel()) {
+                    players[susIndex].setFrozen(true);
                 }          
             }
             gameOver();  

@@ -19,17 +19,25 @@ public class BlueAstronaut extends Player implements Crewmate {
 
     public void emergencyMeeting(Player[] players) {
         if(!this.isFrozen()){
+            boolean isFrozenCheck1 = true;
             Arrays.sort(players);
-            int susInt = players.length - 1;
-            System.out.println(susInt);
-            System.out.println(players[susInt].getSusLevel());
-            System.out.println(players[susInt - 1].getSusLevel());
-            for (Player p: players) {
-                System.out.println(p.getName() + " : " + p.getSusLevel());
+            int susIndex = players.length - 1;
+            System.out.println(susIndex);
+            System.out.println(players[susIndex].getSusLevel());
+            System.out.println(players[susIndex - 1].getSusLevel());
+           
+            while(isFrozenCheck1) {
+                if (players[susIndex].isFrozen()) {
+                    susIndex--;
+                    System.out.println(players[susIndex].getName() + " : " + susIndex);
+                } else {
+                    isFrozenCheck1 = false;
+                }
             }
-            if (players[susInt].getSusLevel() != players[susInt - 1].getSusLevel()) {
-                players[susInt].setFrozen(true);
-                System.out.println(players[susInt].getName() + "is most sus");
+           
+            if (players[susIndex].getSusLevel() != players[susIndex - 1].getSusLevel()) {
+                players[susIndex].setFrozen(true);
+                // System.out.println(players[susIndex].getName() + " is most sus");
             }   
             
             gameOver();

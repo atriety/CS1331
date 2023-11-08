@@ -57,22 +57,14 @@ public abstract class Player implements Comparable<Player> {
     **/ 
     @Override 
     public int compareTo(Player p) { 
-        if (this.frozen && !p.frozen) {
-           return -1;
+        if(this.susLevel == p.susLevel) {
+            return 0;
         }
-        else if (!this.frozen && p.frozen) {
-            return 1;   
-        } 
-        else if ((this.frozen && p.frozen) || (!this.frozen && !p.frozen)) {
-            if(this.susLevel == p.susLevel) {
-                return 0;
-            }
-            else if (this.susLevel > p.susLevel) {
-                return this.susLevel - p.susLevel;
-            }
-            return -1;
+        else if (this.susLevel > p.susLevel) {
+            return this.susLevel - p.susLevel;
         }
-        return 0;
+        return -1;
+
     }
     
          

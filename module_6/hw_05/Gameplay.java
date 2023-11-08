@@ -13,6 +13,8 @@ public class Gameplay {
 
         // //2
         liam.freeze(susPerson);
+        System.out.println(susPerson.toString());
+
 
         // //3
         liam.freeze(albert);
@@ -40,7 +42,7 @@ public class Gameplay {
 
         //9
         heath.completeTask();
-        System.out.println("Nothing happened");
+        // System.out.println("Nothing happened");
 
         //10
         liam.freeze(angel);
@@ -49,25 +51,28 @@ public class Gameplay {
 
         //11
         liam.sabotage(bob);
-        System.out.println(bob.getSusLevel());
+        // System.out.println(bob.getSusLevel());
         liam.sabotage(bob);
-        System.out.println(bob.getSusLevel());
+        // System.out.println(bob.getSusLevel());
 
         //12
         liam.freeze(bob);
-        System.out.print("is bob frozen? " +bob.isFrozen());
+        // System.out.println("is bob frozen? " +bob.isFrozen());
 
         //13
-        // angel.emergencyMeeting(Player.getPlayers());
+        // System.out.println("is albert frozen? " + albert.isFrozen());
+        // System.out.println("is susPerson frozen? " + susPerson.isFrozen());
 
+        angel.emergencyMeeting(Player.getPlayers());
+        System.out.println("is liam frozen? " + liam.isFrozen());
         //14
-        for (int i = 0; i < 5; i++) {
-            liam.sabotage(heath);
-            System.out.println(heath.getSusLevel());
-        }
+        // for (int i = 0; i < 5; i++) {
+        //     liam.sabotage(heath);
+        //     System.out.println(heath.getSusLevel());
+        // }
 
-        //15
-        liam.freeze(heath);
+        // //15
+        // liam.freeze(heath);
 
 
 
