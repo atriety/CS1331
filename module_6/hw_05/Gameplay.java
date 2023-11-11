@@ -9,33 +9,33 @@ public class Gameplay {
 
         // //1
         liam.sabotage(bob);
-        System.out.println(bob.toString());
+        // System.out.println(bob.toString());
 
         // //2
         liam.freeze(susPerson);
-        System.out.println(susPerson.toString());
+        // System.out.println(susPerson.toString());
 
 
         // //3
         liam.freeze(albert);
-        System.out.println(liam.toString());
-        System.out.println(albert.toString());
+        // System.out.println(liam.toString());
+        // System.out.println(albert.toString());
 
         //4
-        albert.emergencyMeeting(Player.getPlayers());
+        albert.emergencyMeeting();
         
         //5
-        susPerson.emergencyMeeting(Player.getPlayers());
-        System.out.println(bob.toString());
-        System.out.println(heath.toString());
+        susPerson.emergencyMeeting();
+        // System.out.println(bob.toString());
+        // System.out.println(heath.toString());
 
         //6
-        bob.emergencyMeeting(Player.getPlayers());
-        System.out.println(susPerson.isFrozen());
+        bob.emergencyMeeting();
+        // System.out.println(susPerson.isFrozen());
 
         //7
         heath.completeTask();
-        System.out.println(heath.getNumTask());
+        // System.out.println(heath.getNumTask());
 
         //8
         heath.completeTask();
@@ -46,8 +46,8 @@ public class Gameplay {
 
         //10
         liam.freeze(angel);
-        System.out.println(liam.getSusLevel());
-        System.out.println(angel.isFrozen()+ " angel frozen status");
+        // System.out.println(liam.getSusLevel());
+        // System.out.println(angel.isFrozen()+ " angel frozen status");
 
         //11
         liam.sabotage(bob);
@@ -63,8 +63,8 @@ public class Gameplay {
         // System.out.println("is albert frozen? " + albert.isFrozen());
         // System.out.println("is susPerson frozen? " + susPerson.isFrozen());
 
-        angel.emergencyMeeting(Player.getPlayers());
-        System.out.println("is liam frozen? " + liam.isFrozen());
+        angel.emergencyMeeting();
+        // System.out.println("is liam frozen? " + liam.isFrozen());
         //14
         // for (int i = 0; i < 5; i++) {
         //     liam.sabotage(heath);

@@ -17,26 +17,26 @@ public class RedAstronaut extends Player implements Impostor {
         this.skill = DEFAULT_SKILL;
     }
 
-    @Override
-    public void emergencyMeeting(Player[] players) {
+    public void emergencyMeeting() {
+        Player[] p = getPlayers();
         if(!this.isFrozen()){
             boolean isFrozenCheck1 = true;
-            Arrays.sort(players);
-            int susIndex = players.length - 1;
+            Arrays.sort(p);
+            int susIndex = p.length - 1;
 
             while(isFrozenCheck1) {
-                if (players[susIndex].isFrozen()) {
+                if (p[susIndex].isFrozen()) {
                     susIndex--;
                 }
                 isFrozenCheck1 = false;
             }
-            if (this.equals(players[susIndex])) {
-                if (players[susIndex - 1].getSusLevel() != players[susIndex - 2].getSusLevel()) {
-                    players[susIndex - 1].setFrozen(true);
+            if (this.equals(p[susIndex])) {
+                if (p[susIndex - 1].getSusLevel() != p[susIndex - 2].getSusLevel()) {
+                    p[susIndex - 1].setFrozen(true);
                 } 
             } else {
-                if (players[susIndex].getSusLevel() != players[susIndex - 1].getSusLevel()) {
-                    players[susIndex].setFrozen(true);
+                if (p[susIndex].getSusLevel() != p[susIndex - 1].getSusLevel()) {
+                    p[susIndex].setFrozen(true);
                 }          
             }
             gameOver();  
@@ -80,10 +80,11 @@ public class RedAstronaut extends Player implements Impostor {
     @Override
     public String toString(){
         String baseString = super.toString();
+        String printString = baseString + "I am an " + skill + " player!";
         if (this.getSusLevel() > 15) {
-            return baseString.toUpperCase();
+            return printString.toUpperCase();
         } else {
-            return baseString;
+            return printString;
         }
     }
 

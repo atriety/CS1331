@@ -47,7 +47,7 @@ public abstract class Player implements Comparable<Player> {
      * have an emergency meeting.
      */
     //YOUR CODE HERE
-    public abstract void emergencyMeeting(Player[] players);
+    public abstract void emergencyMeeting();
 
     /**
      * This method is the compareTo method from the Comparable interface.

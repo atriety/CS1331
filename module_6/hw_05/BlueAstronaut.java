@@ -17,27 +17,28 @@ public class BlueAstronaut extends Player implements Crewmate {
         this.taskSpeed = 10;
     }
 
-    public void emergencyMeeting(Player[] players) {
+    public void emergencyMeeting() {
+        Player[] p = getPlayers();
         if(!this.isFrozen()){
             boolean isFrozenCheck1 = true;
-            Arrays.sort(players);
-            int susIndex = players.length - 1;
-            System.out.println(susIndex);
-            System.out.println(players[susIndex].getSusLevel());
-            System.out.println(players[susIndex - 1].getSusLevel());
+            Arrays.sort(p);
+            int susIndex = p.length - 1;
+            // System.out.println(susIndex);
+            // System.out.println(p[susIndex].getSusLevel());
+            // System.out.println(p[susIndex - 1].getSusLevel());
            
             while(isFrozenCheck1) {
-                if (players[susIndex].isFrozen()) {
+                if (p[susIndex].isFrozen()) {
                     susIndex--;
-                    System.out.println(players[susIndex].getName() + " : " + susIndex);
+                    // System.out.println(p[susIndex].getName() + " : " + susIndex);
                 } else {
                     isFrozenCheck1 = false;
                 }
             }
            
-            if (players[susIndex].getSusLevel() != players[susIndex - 1].getSusLevel()) {
-                players[susIndex].setFrozen(true);
-                // System.out.println(players[susIndex].getName() + " is most sus");
+            if (p[susIndex].getSusLevel() != p[susIndex - 1].getSusLevel()) {
+                p[susIndex].setFrozen(true);
+                // System.out.println(p[susIndex].getName() + " is most sus");
             }   
             
             gameOver();
